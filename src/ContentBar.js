@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ContentBar = (props) => {
+const ContentBar = ({ content }) => {
   return (
-    <div className="tabcontent">{props.content}</div>
+    <div className="tabcontent">{content}</div>
   )
 }
 

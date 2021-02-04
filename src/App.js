@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Initialize_tabs from './Initialize_tabs';
+import InitializeTabs from './InitializeTabs';
 
 const obj1 = {
   title: "Home",
@@ -21,7 +21,7 @@ const arr = [obj1, obj2, obj3];
 const App = () => {
   return (
     <div>
-      <Initialize_tabs data={arr} />
+      <InitializeTabs items={arr} />
     </div>
   )
 }

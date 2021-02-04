@@ -1,19 +1,26 @@
 import React from 'react';
 
-const TopBar = (props) => {
-  let ChangeTab = (e) => {
-    e.preventDefault();
-    props.setMainIndexfunc(props.index);
+const TopBar = ({ index, setActiveIndexfunc, activeIndex, title }) => {
+  const ChangeTab = () => {
+    setActiveIndexfunc(index);
   }
 
-  if (props.index === props.mainIndex) {
-    return (
-      <button style={{ "color": "white", "backgroundColor": "#0d6efd" }} className="tablink" id={props.index + "_tab"} onClick={ChangeTab}>{props.title}</button>
-    )
+  let tabLinkStyle;
+  if (index === activeIndex) {
+    tabLinkStyle = {
+      "color": "white",
+      "backgroundColor": "#0d6efd"
+    }
+  }
+  else {
+    tabLinkStyle = {
+      "color": "#0d6efd",
+      "backgroundColor": "white"
+    }
   }
 
   return (
-    <button className="tablink" id={props.index + "_tab"} onClick={ChangeTab}>{props.title}</button>
+    <button style={tabLinkStyle} className="tablink" onClick={ChangeTab}>{title}</button>
   )
 }
 
