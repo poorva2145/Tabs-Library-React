@@ -5,8 +5,8 @@ import ContentBar from './ContentBar';
 const InitializeTabs = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const titleList = items.map((item, index) => {
-    return <TopBar key={index} title={item.title} index={index} activeIndex={activeIndex} setActiveIndexfunc={setActiveIndex} />
+  const titleList = items.map(({ title }, index) => {
+    return <TopBar key={index} title={title} index={index} activeIndex={activeIndex} setActiveIndexfunc={setActiveIndex} />
   })
 
   return (
